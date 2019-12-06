@@ -1,0 +1,19 @@
+@import './reset.scss';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+:root {
+    --accent:#ef6461;
+    --highlight:#e4b363;
+    --color:#e8e9eb;
+    --light:#e0dfd5;
+    --background:#313638;
+    --bg: linear-gradient(to bottom, var(--background) 0%,var(--accent) 100%);
+}
+
+html{
+    height:100%;
+}
+
+body{
+    font-family: 'Open Sans',sans-serif;
+}

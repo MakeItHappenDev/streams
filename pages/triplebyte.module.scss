@@ -1,0 +1,64 @@
+body{
+    background-color: #ECEEEE;
+}
+
+.container {
+    display:grid;
+    grid-template:
+    "winnie bob thomas george" auto
+    /1fr 1fr 1fr 1fr;
+    grid-column-gap: 25px;
+    margin:0 25px;
+    > article {
+        > h1 {
+            height:30px;
+            text-align: center;
+            color:white;
+            margin-bottom: 12px;
+        }
+        &:first-child{
+            h1{
+                background-color: #8E6E95;
+            }
+        }
+        &:nth-child(2){
+            h1{
+                background-color: #39A59C;
+            }
+        }
+        &:nth-child(3){
+            h1{
+                background-color: #344759;
+            }
+        }
+        &:last-child{
+            > h1 {
+                background-color: #E8741E;
+            }
+        }
+        > section {
+            background-color:white;
+            padding:14px 8px;
+            margin-bottom: 12px;
+            display:flex;
+            >p{
+                margin:0;
+                flex:0 0 auto;
+                &:nth-child(2){
+                    flex:1 1 auto;
+                    margin:0 12px;
+                }
+                &:first-child, &:last-child{
+                    cursor:pointer;
+                }
+            }
+
+        }
+        
+        > button {
+            border:none;
+            outline: none;
+            color:#c0c0c0
+        }
+    }
+}
