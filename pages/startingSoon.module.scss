@@ -45,28 +45,29 @@
                 display:block;
                 text-align: center;
                 z-index:1;
-                &:nth-child(1){
-                    color: var(--highlight);
-                    animation: float 3s ease-in-out infinite;
-                    animation-delay:-1s;
-                }
-                &:nth-child(2){
-                    color: var(--color);
-                    animation: float 3s ease-in-out infinite;
-                    animation-delay:-0.5s;
-                }
-                &:nth-child(3){
-                    color: var(--highlight);
-                    animation: float 3s ease-in-out infinite;
+                animation: float 3s ease-in-out infinite;
+
+                $words: 2;
+                @for $i from 0 to $words {
+                    &:nth-child(#{$words - $i}) {
+                        animation-delay: #{$i*(-400)}ms;
+                        @if($i % 2 == 0){
+                            color: var(--highlight);
+                        }
+                        @else{
+                            color: var(--color);
+                        }
+                    }
                 }
                 > span{
+                    min-width: 3rem;
                     opacity:0;
                     display:inline-block;
                     transform:translateY(150px);
-                    transition: all 1s ease;
-                    $elements: 15;
-                    @for $i from 0 to $elements {
-                        &:nth-child(#{$i + 1}) {
+                    transition: opacity 0.75s ease, transform 1s ease;
+                    $letters: 15;
+                    @for $i from 0 to $letters {
+                        &:nth-child(#{$letters - $i}) {
                             transition-delay: #{$i*5}00ms ;
                         }
                     }

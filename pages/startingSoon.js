@@ -6,7 +6,6 @@ export default () => {
 
      const [step,setStep] = useState(0)
      const stepUp = () => {
-         console.log("stepup ",step)
         if(step == 2){
             setStep(0)
         }
@@ -30,13 +29,16 @@ export default () => {
         }
     },[step])
 
+    const text = "Starting-soon"
+
 
     return (
         <main className={styles.container}>
             <section className={styles.title}>
                 <h1 className={step == 1?styles.show:step == 2?styles.hide:null}>
-                    <span>{'Starting'.split('').map((c,i)=><span key={i}>{c}</span>)}</span>
-                    <span>{'soon'.split('').map((c,i)=><span key={i}>{c}</span>)}</span>
+                    {text.split("-").map((w,o)=><span key={`word-${o}`}>
+                        {w.split('').map((c,i)=><span key={`letter-${o}-${i}`}>{c}</span>)}
+                    </span>)}
                 </h1>
             </section>
             <nav></nav>
