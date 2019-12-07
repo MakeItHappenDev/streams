@@ -14,9 +14,9 @@
 }
 
 @keyframes rotateBG {
-    0%{background-position:72% 0%}
-    50%{background-position:29% 100%}
-    100%{background-position:72% 0%}
+    0%{background-position:29% 100%}
+    50%{background-position:72% 0%}
+    100%{background-position:29% 100%}
 }
 
 
@@ -40,8 +40,6 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             font-weight: bolder;
-            opacity:0;
-            transition: opacity 0.5s;
             transform:rotate(-10deg) skew(-15deg);
             > span {
                 display:block;
@@ -61,10 +59,31 @@
                     color: var(--highlight);
                     animation: float 3s ease-in-out infinite;
                 }
+                > span{
+                    opacity:0;
+                    display:inline-block;
+                    transform:translateY(150px);
+                    transition: all 1s ease;
+                    $elements: 15;
+                    @for $i from 0 to $elements {
+                        &:nth-child(#{$i + 1}) {
+                            transition-delay: #{$i*5}00ms ;
+                        }
+                    }
+                }
             }
         }
         > h1.show{
-            opacity:1;
+            >span>span{
+                opacity:1;
+                transform:translateY(0); 
+            }
+        }
+        > h1.hide{
+            >span>span{
+                opacity:0;
+                transform:translateY(-150px); 
+            }
         }
     }
 }
