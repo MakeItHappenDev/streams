@@ -17,7 +17,7 @@ export default () => {
 
     useEffect(()=>{
         if(step === 0){
-            setTimeout(()=>stepUp(),2000)
+            setTimeout(()=>stepUp(),1500)
         }
         else if(step == 1){
             setTimeout(()=>stepUp(),10000)

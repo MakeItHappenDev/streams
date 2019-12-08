@@ -95,12 +95,13 @@
         right:0;
         bottom:10%;
         opacity: 0;
-        padding:3rem;
-        font-size: 3rem;
+        padding:2rem;
+        font-size: 4rem;
+        font-weight: bolder;
         border-top:3px solid var(--color);
         border-bottom:3px solid var(--color);
         transform:scaleX(0);
-        background: linear-gradient(90deg,rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.2) 50%,rgba(0,0,0,0.1) 100%);
+        background: linear-gradient(90deg,rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.3) 50%,rgba(0,0,0,0.1) 100%);
 
         transition:all 0.5s ease;
         
@@ -122,8 +123,9 @@
         }
         > p {
             z-index:1;
-            animation: float 3s ease-in-out infinite;
-            color:var(--highlight);
+            //animation: float 3s ease-in-out infinite;
+            color:var(--color);
+            text-shadow: var(--background) 1px 1px, var(--background) 2px 2px, var(--background) 3px 3px, var(--background) 4px 4px, var(--background) 5px 5px, var(--background) 6px 6px;
             flex:0 0 auto;
             > span{
                 display:inline-block;
