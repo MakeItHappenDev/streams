@@ -17,19 +17,18 @@ export default () => {
 
     useEffect(()=>{
         if(step === 0){
-            //title is steped, timeout 10s to clear it
-            setTimeout(()=>stepUp(),1000)
+            setTimeout(()=>stepUp(),2000)
         }
         else if(step == 1){
             setTimeout(()=>stepUp(),10000)
         }
         else{
-            //title is cleared, timeout 5s to step it
-            setTimeout(()=>stepUp(),4000)
+            setTimeout(()=>stepUp(),10000)
         }
     },[step])
 
     const text = "Starting-soon"
+    const links = "Twitter /@ArthurBienSur-Twitch /ArthurBienSur"
 
 
     return (
@@ -41,7 +40,11 @@ export default () => {
                     </span>)}
                 </h1>
             </section>
-            <nav></nav>
+            <nav className={step == 2?styles.showLinks:step == 0?styles.hideLinks:null}>
+                {links.split("-").map((w,o)=><p key={`links-${o}`}>
+                    {w.split('').map((c,i)=><span key={`link-${o}-${i}`}>{c}</span>)}
+                </p>)}
+            </nav>
         </main>
     )
 }

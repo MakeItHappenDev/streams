@@ -27,7 +27,7 @@
     background: var(--bg);
     background-size:400% 400%;
     color: var(--color);
-    animation: rotateBG 15s ease infinite;
+    animation: rotateBG 21s ease infinite;
     position:relative;
     > .title{
         position: absolute;
@@ -84,6 +84,58 @@
             >span>span{
                 opacity:0;
                 transform:translateY(-150px); 
+            }
+        }
+    }
+    > nav {
+        position: absolute;
+        display:flex;
+        justify-content: space-around;
+        left:0;
+        right:0;
+        bottom:10%;
+        opacity: 0;
+        padding:3rem;
+        font-size: 3rem;
+        border-top:3px solid var(--color);
+        border-bottom:3px solid var(--color);
+        transform:scaleX(0);
+        background: linear-gradient(90deg,rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.2) 50%,rgba(0,0,0,0.1) 100%);
+
+        transition:all 0.5s ease;
+        
+        &.showLinks{
+            transform:scaleX(1);
+            > p > span{
+                opacity:1;
+                transform:translateY(0px);
+            }
+            opacity: 1;
+        }
+        &.hideLinks{
+            transform:scaleX(1);
+            opacity: 1;
+            > p > span{
+                opacity:0;
+                transform:translateY(-50px);
+            }
+        }
+        > p {
+            z-index:1;
+            animation: float 3s ease-in-out infinite;
+            color:var(--highlight);
+            flex:0 0 auto;
+            > span{
+                display:inline-block;
+                transform:translateY(50px);
+                opacity:0;
+                transition:all 0.5s ease;
+                $link: 23;
+                @for $i from 0 to $link {
+                    &:nth-child(#{$i + 1}) {
+                        transition-delay: #{$i*25 + 500}ms ;
+                    }
+                }
             }
         }
     }
