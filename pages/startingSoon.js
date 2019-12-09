@@ -6,12 +6,7 @@ export default () => {
 
      const [step,setStep] = useState(0)
      const stepUp = () => {
-        if(step == 2){
-            setStep(0)
-        }
-        else{
-            setStep(step+1)
-        }
+            setStep((step+1)%3)
      }
      
 
