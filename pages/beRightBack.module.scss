@@ -1,0 +1,84 @@
+@keyframes float {
+  0%{
+    filter: drop-shadow(5px 15px black);
+    transform:translateY(0px) rotate(-10deg) skew(-15deg);
+  }
+  50%{
+    filter: drop-shadow(15px 25px 15px black);
+    transform: translateY(-10px) rotate(-10deg) skew(-15deg);
+  }
+  100%{
+    filter: drop-shadow(5px 15px black);
+    transform: translateY(0px) rotate(-10deg) skew(-15deg);
+  }
+
+}
+
+.container{
+  width:1920px;
+  height:1080px;
+  background:var(--bg);
+  color:var(--color);
+  position:relative;
+  >nav {
+    font-size: 5rem;
+  }
+  > section {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,0%);
+    font-size:10rem;
+    line-height: 1.25;
+    font-weight: bolder;
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 0;
+    transition:all 0.5s ease;
+    > h1 {
+      display:block;
+      animation: float 3s ease infinite;
+      $words: 3;
+      @for $i from 0 to $words{
+        &:nth-child(#{$words - $i}){
+          animation-delay: #{$i*(-250)}ms;
+          @if($i % 2 == 0){
+            color:var(--highlight)
+          }
+          @else{
+            color:var(--color)
+          }
+        }
+      }
+      > span{
+        min-width: 3rem;
+        display: inline-block;
+        transform: translateY(150px);
+        opacity: 0;
+        transition: opacity 0.75s ease, transform 1s ease;
+        $letters:5;
+        @for $i from 0 to $letters{
+          &:nth-child(#{$letters - $i}){
+            transition-delay: #{$i * 50}ms;
+          }
+        }
+      }
+    }
+    &.hide{
+      opacity: 0;
+      transform:translate(-50%,-100%);
+      > h1 > span {
+        transform: translateY(-150px);
+        opacity: 0;
+      }
+    }
+    &.show{
+      opacity: 1;
+      transform:translate(-50%,-50%);
+      > h1 > span {
+        transform: translateY(0px);
+        opacity: 1;
+      }
+    }
+  }
+}

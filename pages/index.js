@@ -7,6 +7,7 @@ const Home = () => {
   return (
     <div>
       <p><Link ><a href="/startingSoon">Starting soon</a></Link></p>
+      <p><Link ><a href="/beRightBack">Be Right Back</a></Link></p>
     </div>
   )
 }
