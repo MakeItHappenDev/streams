@@ -1,0 +1,4 @@
+[
+    {"id":1,"text":"foo bar","author":1},
+    {"id":2,"text":"hello world","author":1}
+]
