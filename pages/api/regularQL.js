@@ -10,15 +10,6 @@ const query = `{
     text
     author{
       name
-      id
-      tweets{
-        text
-        id
-        author{
-          name
-          id
-        }
-      }
     }
   }
 }`
