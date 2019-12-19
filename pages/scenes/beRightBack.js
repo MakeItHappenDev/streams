@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
 
-import '../styles/general.scss'
+import '../../styles/general.scss'
 import styles from './beRightBack.module.scss'
 
 const text = "Be/Right/Back"

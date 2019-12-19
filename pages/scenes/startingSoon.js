@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react'
-import '../styles/general.scss'
+import '../../styles/general.scss'
 import styles from './startingSoon.module.scss'
 
 export default () => {
