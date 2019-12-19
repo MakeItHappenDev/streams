@@ -6,8 +6,8 @@ const Home = () => {
 
   return (
     <div>
-      <p><Link ><a href="/startingSoon">Starting soon</a></Link></p>
-      <p><Link ><a href="/beRightBack">Be Right Back</a></Link></p>
+      <p><Link ><a href="/scenes/startingSoon">Starting soon</a></Link></p>
+      <p><Link ><a href="/scenes/beRightBack">Be Right Back</a></Link></p>
     </div>
   )
 }

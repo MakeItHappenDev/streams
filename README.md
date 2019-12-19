@@ -15,3 +15,11 @@ npm run dev
 ```
 
 and you have it
+
+If you want to deploy to the web, you need to install now.sh ( https://zeit.co/docs )
+
+```
+now --prod
+``` 
+
+Your website is live!
