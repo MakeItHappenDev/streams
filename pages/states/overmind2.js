@@ -1,7 +1,7 @@
 import React from 'react'
 import { createOvermind } from 'overmind'
 import { Provider } from 'overmind-react'
-import charts,{ useOvermind } from './overmind/statechart'
+import charts,{ useOvermind } from '../../state/overmind/statechart'
 
 const overmind = createOvermind(charts)
 
