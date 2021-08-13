@@ -16,7 +16,7 @@
     "@zeit/next-sass": "^1.0.1",
     "graph-object-notation": "^0.1.6",
     "graphql": "^14.5.8",
-    "next": "^9.1.6",
+    "next": "^11.1.0",
     "node-sass": "^4.13.0",
     "overmind": "^21.0.0",
     "overmind-react": "^22.0.0",
